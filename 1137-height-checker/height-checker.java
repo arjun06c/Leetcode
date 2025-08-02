@@ -2,7 +2,7 @@ class Solution {
     public int heightChecker(int[] arr) {
         int n=arr.length;
      
-        int arr2[]=new int[n];
+        int arr2[]=arr.clone();
         for(int i=0;i<n;i++)
         {
             arr2[i]=arr[i];
