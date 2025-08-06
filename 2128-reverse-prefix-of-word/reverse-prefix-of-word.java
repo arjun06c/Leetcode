@@ -1,7 +1,7 @@
 class Solution {
     public String reversePrefix(String word, char ch) {
-        String res="";
-        String res1="";
+        StringBuilder res=new StringBuilder();
+        StringBuilder res1=new StringBuilder();
         int index=0;
         Boolean flag=true;
         for(int i=0;i<word.length();i++)
@@ -20,22 +20,20 @@ class Solution {
         {  
             char ans=word.charAt(i);
            
-                res+=ans;
+                res.append(ans);
                 if(ans==ch)
                 {  index=i;
                     break;
                 }
         }
-        StringBuilder sl=new StringBuilder(res).reverse();
+         StringBuilder sl=res.reverse();
         String a=sl.toString();
         for(int i=index+1;i<word.length();i++)
         {  char ans2=word.charAt(i);
-            res1+=ans2;
+            res1.append(ans2);
         }
-        // System.out.print(a+" "+index);
-        // System.out.print(res1+" ");
-
-        return a+res1;
+        String b=res1.toString();
+        return a+b;
         
     }
 }
