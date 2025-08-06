@@ -6,20 +6,13 @@ class Solution {
         {
             res.put(heights[i],names[i]);
         }
-       TreeMap<Integer,String>res2=new TreeMap<>(res);
-       int i=0;
-       for(int ch:res2.keySet())
-       {
-          ans[i++]=res2.get(ch);
-       }
+      Arrays.sort(heights);
        String ans2[]=new String[names.length];
        int k=0;
-       for(int j=ans.length-1;j>=0;j--)
+       for(int i= heights.length-1;i>=0;i--)
        {
-        ans2[k++]=ans[j];  
-       }    
-       
-       
+        ans2[k++]=res.get(heights[i]);
+       }  
        return ans2;
     }
 }
