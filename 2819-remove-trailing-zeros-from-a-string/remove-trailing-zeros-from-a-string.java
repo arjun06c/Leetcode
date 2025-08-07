@@ -15,13 +15,13 @@ class Solution {
             }
         }
         System.out.print(ind+"");
-        String res="";
+        StringBuilder res=new StringBuilder();
         for(int i=0;i<=ind;i++)
         {
             char ans=num.charAt(i);
-            res+=ans;
+            res.append(ans);
         }
-        return res;
+        return res.toString();
         
     }
 }
