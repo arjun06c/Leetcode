@@ -10,23 +10,27 @@ class Solution {
             {
                 count1+=1;
             }
-        }
-        for(int i=n/2;i<n;i++)
-        {
-            if(vow.contains(s.charAt(i)))
+            if(vow.contains(s.charAt(i+n/2)))
             {
                 count2+=1;
             }
         }
-        if(count1==count2)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        // for(int i=n/2;i<n;i++)
+        // {
+        //     if(vow.contains(s.charAt(i)))
+        //     {
+        //         count2+=1;
+        //     }
+        // }
+        // if(count1==count2)
+        // {
+        //     return true;
+        // }
+        // else
+        // {
+        //     return false;
+        // }
        
-        
+        return count1==count2;
     }
 }
