@@ -1,27 +1,22 @@
+import java.util.HashMap;
+
 class Solution {
     public boolean areOccurrencesEqual(String s) {
-        HashMap<Character,Integer>res=new HashMap<>();
-        for(int i=0;i<s.length();i++)
-        {
-            char ch=s.charAt(i);
-            if(res.containsKey(ch))
-            {
-               res.put(ch,res.get(ch)+1);
-            }
-            else{
-                res.put(ch,1);
-            }
+        HashMap<Character, Integer> hashmap = new HashMap<>();
+
+        // Count occurrences
+        for (char ch : s.toCharArray()) {
+            hashmap.put(ch, hashmap.getOrDefault(ch, 0) + 1);
         }
-        int temp=res.get(s.charAt(0));
-    
-        for(char num:res.keySet())
-        {
-            if(res.get(num)!=temp)
-            {
-                return false;
-            }
+
+        // Get the first occurrence count
+        int expected = hashmap.values().iterator().next();
+
+        // Compare all counts with the expected value
+        for (int count : hashmap.values()) {
+            if (count != expected) return false;
         }
-          return true;
+
+        return true;
     }
-  
 }
