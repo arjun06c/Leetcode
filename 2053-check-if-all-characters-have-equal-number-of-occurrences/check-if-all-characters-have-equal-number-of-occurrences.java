@@ -12,15 +12,11 @@ class Solution {
                 res.put(ch,1);
             }
         }
-     ArrayList<Integer>ans=new ArrayList<>();
+        int temp=res.get(s.charAt(0));
+    
         for(char num:res.keySet())
-        {  
-           ans.add(res.get(num));
-        }
-        int temp=ans.get(0);
-        for(int i=0;i<ans.size();i++)
         {
-            if(ans.get(i)!=temp)
+            if(res.get(num)!=temp)
             {
                 return false;
             }
