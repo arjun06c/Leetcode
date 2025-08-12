@@ -1,32 +1,32 @@
 class Solution {
-    public List<Boolean> kidsWithCandies(int[] arr, int extraCandies) {
-        int n=arr.length;
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int n=candies.length;
         ArrayList<Boolean>res=new ArrayList<>();
-       
+        int max=0;
         int sum=0;
-      int max=0;
-
         for(int i=0;i<n;i++)
-        { 
-          if(arr[i]>max)
-          {
-            max=arr[i];
-          }
+        {
+         if(candies[i]>max)
+         {
+            max=candies[i];
+         }
         }
-       for(int i=0;i<n;i++)
-       {
-          sum=arr[i]+extraCandies;
-          if(sum>=max)
-          {
-            res.add(true);
-          }
-          else{
-            res.add(false);
-          }
-       }
+        System.out.print(max+" ");
+        for(int i=0;i<n;i++)
+        {
+            sum=candies[i]+extraCandies;
+            if(sum>=max)
+            {
+                res.add(true);
+            }
+            else
+            {
+               res.add(false);
+            }
+        }
 
+            return res;
 
-        return res;
         
     }
 }
