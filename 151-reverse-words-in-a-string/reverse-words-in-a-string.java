@@ -4,12 +4,10 @@ class Solution {
         String word[]=res.split(" ");
         int left=0;
         int right=word.length-1;
-  
         while(left<right)
         {
             String temp=word[left];
             word[left]=word[right];
-           
             word[right]=temp;
             left++;
             right--;
