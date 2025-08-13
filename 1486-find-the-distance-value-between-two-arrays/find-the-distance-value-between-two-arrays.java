@@ -6,6 +6,7 @@ class Solution {
         int right=0;
         int count=0;
         boolean flag=true;
+        
         while(left<n1 )
         {  
             int sum=Math.abs(arr1[left]-arr2[right]);
@@ -13,7 +14,6 @@ class Solution {
             {
                 flag=false;
             }
-          
             if(right==n2-1)
             {
                  if(flag)
