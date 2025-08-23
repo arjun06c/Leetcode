@@ -11,7 +11,7 @@ class Solution {
             if(nums[right]!=nums[left])
             {
                 count++;
-               nums[k++]=nums[left];
+                nums[k++]=nums[left];
                 left=right;
                 right++;
             }
@@ -19,10 +19,8 @@ class Solution {
             {
                 right++;
             }
-
         }
         nums[k]=nums[right-1];
- System.out.print(count+1+"");
         return count+1;
         
     }
