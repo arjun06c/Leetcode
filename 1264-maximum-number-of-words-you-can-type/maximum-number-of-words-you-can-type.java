@@ -2,14 +2,20 @@ class Solution {
     public int canBeTypedWords(String text, String Letters) {
         String arr[]=text.split(" ");
         int count=0;
+        HashSet<Character>res=new HashSet<>();
+        for(char ch:Letters.toCharArray())
+        {
+            res.add(ch);
+        }
       
-        for(int i=0;i<arr.length;i++)
+        for(String word:arr)
         {   boolean flag=true;
-             for(int j=0;j<Letters.length();j++)
+             for(char ch:word.toCharArray())
               {           
-                 if(arr[i].contains(String.valueOf(Letters.charAt(j))))
+                 if(res.contains(ch))
                {  
                 flag=false;
+                break;
                }
            }
            if(flag)
