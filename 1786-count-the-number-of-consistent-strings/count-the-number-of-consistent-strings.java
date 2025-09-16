@@ -14,6 +14,7 @@ class Solution {
             if(!res.contains(ch))
             {
                 flag=false;
+                break;
             }
         }
         if(flag)
