@@ -2,12 +2,11 @@ class Solution {
     public int searchInsert(int[] arr, int target) {
         int n=arr.length;
         int low=0;
-        int high=n-1;
-        int mid;
         int ans=n;
+        int high=n-1;
         while(low<=high)
         {
-            mid=low+(high-low)/2;
+            int mid=(low+high)/2;
             if(arr[mid]>=target)
             {
                 ans=mid;
@@ -18,5 +17,6 @@ class Solution {
             }
         }
         return ans;
+        
     }
 }
