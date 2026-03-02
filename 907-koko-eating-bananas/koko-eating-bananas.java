@@ -10,7 +10,7 @@ class Solution {
             int mid=(low+high)/2;
             int totalhour=findtotal(mid,arr,n);
             if(totalhour<=h)
-            {  ans=totalhour;
+            {  ans=mid;
                high=mid-1;
             }
             else{
@@ -19,7 +19,7 @@ class Solution {
 
 
         }
-        return low;
+        return ans;
     }
     private int findmax(int arr[],int n)
     {
