@@ -5,7 +5,7 @@ class Solution {
     }
     private int[] mergesort(int []arr,int low,int high )
     {
-        if(low==high) return arr;
+        if(low>=high) return arr;
        int mid=(low+high)/2;
         mergesort(arr,low,mid);
         mergesort(arr,mid+1,high);
