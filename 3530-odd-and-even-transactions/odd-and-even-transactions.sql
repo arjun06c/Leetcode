@@ -1,0 +1,4 @@
+select transaction_date,
+ sum(case when amount%2=1 then amount else 0 END) as odd_sum,
+ sum(case when amount%2=0 then amount else 0 END)AS even_sum
+ from transactions group by transaction_date order by transaction_date;
