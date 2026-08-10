@@ -20,8 +20,7 @@ class Solution {
         else{
              even+=nums[n-1];
         }
-        System.out.println(odd);
-        System.out.print(even);
+        
         return even-odd;
         
     }
