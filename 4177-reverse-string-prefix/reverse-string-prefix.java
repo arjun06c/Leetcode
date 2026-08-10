@@ -3,7 +3,6 @@ class Solution {
         int n=s.length();
         
         StringBuilder sb=new StringBuilder();
-        System.out.print(k);
         for(int i=k-1;i>=0;i--)
         {
             sb.append(s.charAt(i));
