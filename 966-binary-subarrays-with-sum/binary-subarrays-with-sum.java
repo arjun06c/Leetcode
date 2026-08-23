@@ -1,38 +1,21 @@
 class Solution {
-  public int fun(int []nums,int goal)
-  {
-      int n=nums.length;
-      int sum=0;
-      int left=0;
-      int right=0;
-       if(goal<0)
-        {
-            return 0;
-        }
-      int count=0;
-      while(right<n)
-      {
-       
-        sum+=nums[right];
-
-       while(sum>goal)
-       {
-         sum-=nums[left];
-         left++;
-       }
-       count+=(right-left+1);
-       right++;
-    
-
-
-      }
-      return count;
-  }
-
-
     public int numSubarraysWithSum(int[] nums, int goal) {
-        
-        return fun(nums,goal)-fun(nums,goal-1);
+        int n=nums.length;
+         HashMap<Integer,Integer>res=new HashMap<>();
+        int prefix=0;
+        res.put(0,1);
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            prefix+=nums[i];
+            int val=prefix-goal;
+            if(res.containsKey(val))
+            {
+                count+=res.get(val);
+            }
+            res.put(prefix,res.getOrDefault(prefix,0)+1);
+        }
+        return count;
         
     }
 }
