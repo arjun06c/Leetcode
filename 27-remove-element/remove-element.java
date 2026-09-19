@@ -1,21 +1,22 @@
 class Solution {
-    public int removeElement(int[] arr, int val) {
-        int n=arr.length;
-        int left=0;
-        int right=0;
-        int count=0;
-        int k=0;
-        while(right<n)
-       {
-          if(arr[right]==val)
-          {
-            count++;
-          }
-          else{
-            arr[k++]=arr[right];
-          }
-         right++;
-       }
-       return n-count;
+    public int removeElement(int[] nums, int val) {
+        
+      int n=nums.length;
+      ArrayList<Integer>res=new ArrayList<>();
+      int left=0;
+      int right=0;
+      while(right<n)
+      {
+        if(nums[right]!=val)
+        {
+            res.add(nums[right]);
+        }
+        right++;
+      }
+     for(int i=0;i<res.size();i++)
+     {
+        nums[i]=res.get(i);
+     }
+return res.size();
     }
 }
