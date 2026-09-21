@@ -4,7 +4,6 @@ class Solution {
         int left=0;
         int right=1;
         int count=1;
-        int temp=0;
 
         ArrayList<Integer>res=new ArrayList<>();
         while(right<n)
@@ -12,7 +11,6 @@ class Solution {
             if(nums[left]==nums[right] && count<2)
             {
                res.add(nums[left]);
-               temp++;
                count++;
                left++;
                right++;
@@ -26,7 +24,6 @@ class Solution {
             else if(nums[left]!=nums[right])
             {
                 res.add(nums[left]);
-                temp++;
                 count=1;
                 left++;
                 right++;
@@ -38,7 +35,7 @@ class Solution {
             {
                 nums[i]=res.get(i);
             }
-        return temp+1;
+        return res.size();
 
     }
 }
